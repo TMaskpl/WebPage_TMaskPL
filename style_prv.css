@@ -15,3 +15,11 @@ body {
   margin-right: auto;
   width: 50%;
 }
+
+input[type="text"] {
+  background-color: #D06700;
+  border-color: #D06700;
+  border: none;
+  color:#D06700;
+  width: 1%;
+}
